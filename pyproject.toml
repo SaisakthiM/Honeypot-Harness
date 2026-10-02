@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.9"
 license = "MIT"
 license-files = ["LICENSE"]
-authors = [{ name = "Saisakthi" }]
+authors = [{ name = "Saisakthi", email = "saisakthicloud@gmail.com" }]
 keywords = ["prompt-injection", "honeypot", "llm", "ai-agents", "security", "selenium", "red-team", "canary"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -30,9 +30,9 @@ classifiers = [
 dependencies = ["httpx>=0.27"]
 
 # TODO before publishing: fill these in (they show up in the PyPI sidebar).
-# [project.urls]
-# Homepage = "https://github.com/<you>/honeypot-ai"
-# Issues = "https://github.com/<you>/honeypot-ai/issues"
+[project.urls]
+Homepage = "https://github.com/SaisakthiM/Honeypot-Harness"
+Issues = "https://github.com/SaisakthiM/Honeypot-Harness/issues"
 
 [project.optional-dependencies]
 selenium = ["selenium>=4.10"]
