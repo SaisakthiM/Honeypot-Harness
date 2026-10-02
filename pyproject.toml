@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "honeypot-ai"
+version = "0.2.0b1"
+description = "Prompt-injection honeypot: scan pages for hidden instructions and test whether AI agents (including Selenium-driven ones) fall for them"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Saisakthi" }]
+keywords = ["prompt-injection", "honeypot", "llm", "ai-agents", "security", "selenium", "red-team", "canary"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+    "Topic :: Software Development :: Testing",
+    "Typing :: Typed",
+]
+dependencies = ["httpx>=0.27"]
+
+# TODO before publishing: fill these in (they show up in the PyPI sidebar).
+# [project.urls]
+# Homepage = "https://github.com/<you>/honeypot-ai"
+# Issues = "https://github.com/<you>/honeypot-ai/issues"
+
+[project.optional-dependencies]
+selenium = ["selenium>=4.10"]
+rendered = ["playwright>=1.40"]
+all = ["selenium>=4.10", "playwright>=1.40"]
+test = ["pytest>=7"]
+dev = ["pytest>=7", "build", "twine", "ruff"]
+
+[project.scripts]
+honeypot-ai = "honeypot_ai.cli:main"
+
+[project.entry-points.pytest11]
+honeypot_ai = "honeypot_ai.pytest_plugin"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+honeypot_ai = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,5 @@
+include LICENSE README.md CHANGELOG.md
+recursive-include tests *.py
+recursive-include examples *.py
+prune honeypot_runs
+global-exclude __pycache__ *.py[cod]
